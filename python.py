@@ -14,7 +14,6 @@ class MyClass():
         self.val_a = 4
         self.val_b = 5
         self.val_c = self.val_a * self.val_b
-        time.sleep(1)
 
     def print_output(self):
         """
@@ -22,9 +21,17 @@ class MyClass():
         """
         print(f'The output of the calculation is {self.val_c}')
 
-    def
+    def print_forever(self):
+        """
+        calls print_output for all eternity
+        """
+        while True:
+            self.print_output()
+            time.sleep(0.1)
 
 
-if __name__ == 'main':
+if __name__ == '__main__':
     instance = MyClass()
     instance.print_output()
+    time.sleep(3)
+    instance.print_forever()
