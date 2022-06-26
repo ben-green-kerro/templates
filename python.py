@@ -32,6 +32,3 @@ class MyClass():
 
 if __name__ == '__main__':
     instance = MyClass()
-    instance.print_output()
-    time.sleep(3)
-    instance.print_forever()
