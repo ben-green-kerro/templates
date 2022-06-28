@@ -2,7 +2,20 @@
 """
 some code to do a job
 """
+# import os
+import sys
 import time
+
+# could be "linux", "linux2", "linux3", ...
+if sys.platform.startswith("linux"):
+    # linux
+    pass
+elif sys.platform == "darwin":
+    # MAC OS X
+    pass
+elif sys.platform == "win32":
+    # Windows (either 32-bit or 64-bit)
+    pass
 
 
 class MyClass():
@@ -14,6 +27,14 @@ class MyClass():
         self.val_a = 4
         self.val_b = 5
         self.val_c = self.val_a * self.val_b
+
+    def handler(self, signum, frame):  # pylint: disable=W0613
+        """
+        This is the handler for SIGINT events sent by the user pressing ctrl-c.
+        """
+        print('')
+        print("Ctrl-c was pressed. Exiting...")
+        sys.exit()
 
     def print_output(self):
         """
@@ -32,3 +53,4 @@ class MyClass():
 
 if __name__ == '__main__':
     instance = MyClass()
+    instance.print_forever()
