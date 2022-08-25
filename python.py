@@ -6,24 +6,24 @@ some code to do a job
 import sys
 import time
 
-# could be "linux", "linux2", "linux3", ...
+# Determine OS
 if sys.platform.startswith("linux"):
-    # linux
-    pass
+    system = 'linux'
 elif sys.platform == "darwin":
-    # MAC OS X
-    pass
+    system = 'macos'
 elif sys.platform == "win32":
-    # Windows (either 32-bit or 64-bit)
-    pass
+    system = 'windows'
 
 
-class MyClass():
+class MyClass(object):
     """
     a class to do a job
     """
 
     def __init__(self):
+        """
+        Runs once when object is initialised
+        """
         self.val_a = 4
         self.val_b = 5
         self.val_c = self.val_a * self.val_b
